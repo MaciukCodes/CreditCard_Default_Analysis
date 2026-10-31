@@ -1,0 +1,6 @@
+*.csv
+.env
+/__pychache__/
+*.xls
+*.zip
+*.db
