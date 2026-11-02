@@ -7,10 +7,10 @@ import pandas as pd
 
 
 # %% #* path locations
-ROOT = Path(__file__).parent.parent
+ROOT = Path(__file__).parents[2]
 db_name = 'default_cc_clients'
-db_location = ROOT / 'data' / (db_name + '.db')
-raw_data = 'raw_data'
+db_location = ROOT / 'src' / 'database' / (db_name + '.db')
+raw_data_table = 'raw_data'
 xls_file = ROOT / 'data' / 'default of credit card clients.xls'
 
 # %% #* DataFrame
@@ -28,18 +28,18 @@ str_values = ', '.join(db_values)
 
 # %% #* query strings
 query_1 = f"""
-            CREATE TABLE IF NOT EXISTS {raw_data}
+            CREATE TABLE IF NOT EXISTS {raw_data_table}
                 ({sql_cols})
             """
 
 query_2 = f"""
-            INSERT INTO {raw_data}
+            INSERT INTO {raw_data_table}
                 VALUES {str_values}
             """
 
 query_check = f"""
             SELECT 1
-            FROM {raw_data}
+            FROM {raw_data_table}
             LIMIT 1    
             """
 
