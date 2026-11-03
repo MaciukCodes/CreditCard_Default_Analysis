@@ -1,7 +1,5 @@
 # %% #* Imports and file names
 
-# import pandas as pd
-# from sqlalchemy import create_engine
 from pathlib import Path
 import sqlite3 as sql
 
@@ -9,7 +7,7 @@ import sqlite3 as sql
 
 # %% #* custom functions imports
 
-from database.db_query_utils import sql_table_create, sql_base_query, case_creation, sql_insert
+from db_query_utils import sql_table_create, sql_base_query, case_creation, sql_insert
 
 # %% #* File paths
 

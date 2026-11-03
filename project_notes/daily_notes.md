@@ -1,4 +1,4 @@
-# Daily Notes rdb docker
+# Daily Notes Credit Card Default Analysis
 
 ### 2026-10-30
 - Got raw data converted from a zip file to excel to DataFrame to SQL after exploring it the minimum amount 

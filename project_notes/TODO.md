@@ -1,2 +1,2 @@
-# Relational Database Docker project TODO list
+# Credit Card Default Analysis: project TODO list
 - 

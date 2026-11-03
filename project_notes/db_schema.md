@@ -1,4 +1,4 @@
-# default_cc_clients DataBase Schema
+# Credit Card Default Analysis DataBase Schema
 
 default_cc_clients
 - raw_data
@@ -37,8 +37,9 @@ default_cc_clients
    - age INT
 
 - monthly reports
-  - statement_id INTEGER PRIMARY KEY AUTOINCREMENT
+  - statement_id INTEGER PRIMARY KEY
   - id INT FORIEGN KEY to cardholder
+  - balance_limit INT
   - Month TEXT
   - Pay INT
   - Bill_amount INT
