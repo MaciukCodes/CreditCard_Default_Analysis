@@ -1,7 +1,7 @@
 # %% #* sql_table_create
 def sql_table_create( 
         table_name : str,
-        extras : str| None = None,
+        *extras,
         **columns
         ):
     """A "quick" way to create tables 
@@ -19,11 +19,11 @@ def sql_table_create(
 
     """
 
-
+#  ???? why isn't this taken in as a arg????
     if extras is not None:
-        extra = ', ' + extras
+        extra = ',\n'.join(extras)
     else:
-        extra = None
+        extra = ''
 
     col = []
 
@@ -36,7 +36,7 @@ def sql_table_create(
 
     query = f"""
         CREATE TABLE IF NOT EXISTS {table_name}(
-            {cols}
+            {cols},
             {extra}
             )
         """

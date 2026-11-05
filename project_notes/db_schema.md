@@ -3,7 +3,7 @@
 default_cc_clients
 - raw_data
   - ID    INT
-  - LIMIT_BAL    INT
+  - ~LIMIT_BAL    INT~
   - ~SEX    INT~
   - ~EDUCATION    INT~
   - ~MARRIAGE    INT~
@@ -35,11 +35,11 @@ default_cc_clients
    - education TEXT CHECK IN ( 'Graduate School', 'University', 'High School', 'Other')
    - marital_status TEXT CHECK IN( 'Married', 'Single', 'Other')
    - age INT
+   - balance_limit INT
 
 - monthly reports
   - statement_id INTEGER PRIMARY KEY
-  - id INT FORIEGN KEY to cardholder
-  - balance_limit INT
+  - id INT FOREIGN KEY to cardholder
   - Month TEXT
   - Pay INT
   - Bill_amount INT

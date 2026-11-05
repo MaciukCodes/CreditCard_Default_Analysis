@@ -49,24 +49,25 @@ extras_age ="""
             CHECK( age between 0 AND 150)
             """
 
-extras = ',\n'.join([
+extras = [
                     extras_sex,
                     extras_education,
                     extras_marital,
                     extras_age
-                ])
+                ]
 
 columns = {
     'cardholder_id': 'INTEGER PRIMARY KEY',
     'sex': 'TEXT',
     'education': 'TEXT',
     'marital_status': 'TEXT',
-    'age': 'INTEGER'    
+    'age': 'INTEGER',
+    'credit_limit': 'INTEGER'    
     }
 
-create_table = sql_table_create('cardholder', extras, **columns )
+create_table = sql_table_create('cardholder', *extras, **columns )
 
-# print(create_table)
+print(create_table)
 
 # %% #* SQL insert query case creation
 
@@ -125,7 +126,8 @@ source_columns = [
                 sex_column_case,
                 educate_column_case,
                 marital_column_case,
-                'AGE'
+                'AGE',
+                'LIMIT_BAL',
 ]
 
 sql_insert_query = sql_base_query( source_table, *source_columns)
@@ -140,7 +142,8 @@ dest_columns = [
             'sex',
             'education',
             'marital_status',
-            'age'
+            'age',
+            'credit_limit'
             ]
 
 sql_values_insert = sql_insert(dest_table, sql_insert_query, *dest_columns )

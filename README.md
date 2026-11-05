@@ -27,7 +27,7 @@ I have plenty of opportunities to display my pandas and python skills however si
 1.  Clone the repository.
 2. Create and start a virtual environment.
 3. Download the zip file from: https://archive.ics.uci.edu/static/public/350/default+of+credit+card+clients.zip 
-4. Make sure the zip file is inside /data/raw_downloads
+4. Make sure the zip file is inside a newly created folder:  /data/raw_downloads
 3. run the following in command line interface from the project root:  ./project_notes/db_create.cmd
 
 ### Future Plans

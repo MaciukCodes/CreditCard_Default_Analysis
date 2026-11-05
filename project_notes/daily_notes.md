@@ -13,4 +13,8 @@
  - tested in both sqlite's method of inspection as well as pandas + sqlalchemy  
     table was passed properly and appears as intended
 - still should research between sql and pandas for the data transform but I think SQL is in the lead  with its ease into window functions
--
+
+
+### 2026-11-03
+- Had the README started previously but cleaned it up and made sure it all worked
+- decided to move credit limit from the monthly_reports table to the cardholder table since its based on the cardholder only and not the month (at least here its not) 

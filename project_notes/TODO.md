@@ -1,2 +1,2 @@
 # Credit Card Default Analysis: project TODO list
-- 
+  - Line 23 db_query_utils.py should probably be an arg intake.....
