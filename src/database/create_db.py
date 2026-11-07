@@ -16,7 +16,9 @@ xls_file = ROOT / 'data' / 'default of credit card clients.xls'
 # %% #* DataFrame
 df_file = pd.read_excel(xls_file, sheet_name='Data', skiprows=1)
 
-df_columns = df_file.keys().str.replace(' ', '_')
+df_columns = df_file.keys().str.replace(' ', '_').str.replace('0', '1')
+# print(df_columns)
+
 sql_cols = ' INTEGER, '.join(df_columns) + ' INTEGER'
 
 db_values = []

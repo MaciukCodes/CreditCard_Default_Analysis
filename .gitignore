@@ -1,6 +1,6 @@
 *.csv
 .env
-/__pychache__/
+__pycache__
 *.xls
 *.zip
 *.db

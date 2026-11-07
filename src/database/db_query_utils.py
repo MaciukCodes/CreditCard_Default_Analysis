@@ -19,7 +19,6 @@ def sql_table_create(
 
     """
 
-#  ???? why isn't this taken in as a arg????
     if extras is not None:
         extra = ',\n'.join(extras)
     else:
@@ -100,7 +99,7 @@ def case_creation(else_str : str | None = None, **kwargs):
             c = f"WHEN {o_key} {i_key} THEN '{i_value}' "
             checks.append(c)
 
-    x_checks = '\n'.join(checks)
+    x_checks = ' '.join(checks)
 
     if else_str is None:
         e_other = ""
