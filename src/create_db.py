@@ -7,18 +7,16 @@ import pandas as pd
 
 
 # %% #* path locations
-ROOT = Path(__file__).parents[2]
+ROOT = Path(__file__).parents[1]
 db_name = 'default_cc_clients'
-db_location = ROOT / 'src' / 'database' / (db_name + '.db')
+db_location = ROOT / 'data' / 'database' / (db_name + '.db')
 raw_data_table = 'raw_data'
 xls_file = ROOT / 'data' / 'default of credit card clients.xls'
 
 # %% #* DataFrame
+
 df_file = pd.read_excel(xls_file, sheet_name='Data', skiprows=1)
-
 df_columns = df_file.keys().str.replace(' ', '_').str.replace('0', '1')
-# print(df_columns)
-
 sql_cols = ' INTEGER, '.join(df_columns) + ' INTEGER'
 
 db_values = []

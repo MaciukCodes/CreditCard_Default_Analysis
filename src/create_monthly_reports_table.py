@@ -7,7 +7,7 @@ import pandas as pd
 
 # %% #* Paths
 
-ROOT = Path(__file__).parents[2]
+ROOT = Path(__file__).parents[1]
 
 # print(ROOT)
 

@@ -8,3 +8,5 @@ __pycache__
 *.csv
 .env
 *.db
+db_inspect.py
+*.md

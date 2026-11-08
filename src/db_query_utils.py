@@ -1,5 +1,5 @@
 # %% #* sql_table_create
-def sql_table_create( 
+def sql_create_table( 
         table_name : str,
         *extras,
         **columns
@@ -19,8 +19,8 @@ def sql_table_create(
 
     """
 
-    if extras is not None:
-        extra = ',\n'.join(extras)
+    if len(extras) > 0:
+        extra = ',' + ',\n'.join(extras)
     else:
         extra = ''
 
@@ -35,7 +35,7 @@ def sql_table_create(
 
     query = f"""
         CREATE TABLE IF NOT EXISTS {table_name}(
-            {cols},
+            {cols}
             {extra}
             )
         """

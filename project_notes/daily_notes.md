@@ -25,4 +25,9 @@
 
 ### 2026-11-06
 - started moving files around and making sure connections still work encountered and issue with the notebook holding the old file location still had to close and restart to fix
-- 
+
+### 2026-11-07
+- learned my issue with request was involved with not understanding its connection to OOP  as well as other functions that use objects (usually created from local files)
+- got the download and unzip into a function
+- got create_raw_table working properly now (found an issue with handling the extras when there where none.)
+- added check if python file is being ran directly or is being imported due to local package import problems

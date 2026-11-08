@@ -4,22 +4,18 @@ from pathlib import Path
 import sqlite3 as sql
 import pandas as pd
 from sqlalchemy import create_engine
-import os
 
-print(os.getcwd())
-
-print(__file__)
 ROOT = Path(__file__).parents[1]
-print(ROOT)
 
-from database.db_query_utils import sql_base_query
+
+from db_query_utils import sql_base_query
 
 # %% #* paths
 
 
 
-alchemy_loc = r'sqlite:///' +  str(ROOT / 'src' / 'database' / 'default_cc_clients.db') 
-db_location = ROOT / 'src' / 'database' / 'default_cc_clients.db'
+alchemy_loc = r'sqlite:///' +  str(ROOT / 'data' / 'database' / 'default_cc_clients.db') 
+db_location = ROOT / 'data' / 'database' / 'default_cc_clients.db'
 
 engine = create_engine(alchemy_loc)
 
@@ -85,12 +81,12 @@ print(df_month)
 
 # query = "DROP TABLE monthly_reports"
 # query = "DROP TABLE cardholder"
-# query = "DROP TABLE raw_data"
+query = "DROP TABLE raw_data"
 
 
 with sql.connect(db_location) as db:
     q_back = db.execute(query)
-
+print('ran')
 
 
 

@@ -11,7 +11,7 @@ from db_query_utils import sql_table_create, sql_base_query, case_creation, sql_
 
 # %% #* File paths
 
-ROOT = Path(__file__).parents[2]
+ROOT = Path(__file__).parents[1]
 # print(ROOT)
 
 db_location = ROOT / 'src' / 'database' / 'default_cc_clients.db'
