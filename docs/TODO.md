@@ -1,9 +1,17 @@
 # Credit Card Default Analysis: project TODO list
-  - ~create a view mainly for the monthly reports query but includes 2 window functions one for unpaid balance from last month and one to calculated the new / added charges~
-    - 2026-11-06 quashed for now  -PM  # due to cardholder 19 and 10 having instances in there pay field that appear wrong
-  - need to possibly create a few columns to check validity based off first record and validity based on last record (all information for that record should be known...
-  -  need to organize the files so they each represent a function as well as turn them into functions
+ 
+ -  need to organize the files so they each represent a function as well as turn them into functions
     - db_utils.py √
 - - download_unzip √
-- - 
-  - also nearish the end make/ add views
+- - create_tables √
+- - insert_raw_data 
+
+- in db quey utils , ajust sql insert to include an option for VALUES insert (probably a bool for values then change query to 
+
+INSERT INTO raw_data (LIMIT_BAL, SEX, EDUCATION, MARRIAGE, AGE, PAY_1, PAY_2, PAY_3, PAY_4, PAY_5, PAY_6, BILL_AMT1, BILL_AMT2, BILL_AMT3, BILL_AMT4, BILL_AMT5, BILL_AMT6, PAY_AMT1, PAY_AMT2, PAY_AMT3, PAY_AMT4, PAY_AMT5, PAY_AMT6, default_payment_next_month)
+
+ID
+
+id got squeezed out of the columns list??
+
+turn back on multiple lines on the inspect file as well as the raw data

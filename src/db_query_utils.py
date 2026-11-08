@@ -116,7 +116,7 @@ def case_creation(else_str : str | None = None, **kwargs):
 # %% #* sql_insert
 def sql_insert(
     table_name : str,
-    query : str,
+    values : str,
     *columns,
     ):
     
@@ -124,7 +124,7 @@ def sql_insert(
     Inserts values into a table via query of another table.
     
     :param table_name: name of the table to insert into.
-    :param query: the query to use when grabbing the records of another table.
+    :param values: the query to use when grabbing the records of another table.
     :param columns: columns to be inserted into.
 
     :ivar cols: the columns parameter joined together in a string.
@@ -132,14 +132,17 @@ def sql_insert(
     :returns: a query to insert into the table provided.
     """
 
-    if columns is None:
+    cocols = ', '.join(columns)
+
+    print(cocols)
+    if len(columns) == 0:
         cols = ''
     else:
-        cols = ', '.join(columns)
+        cols =f"({cocols})"
 
 
     insert_query = f"""
-        INSERT INTO {table_name} ({cols})
-            {query}
+        INSERT INTO {table_name} {cols}
+        {values}
         """
     return insert_query

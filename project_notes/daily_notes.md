@@ -31,3 +31,5 @@
 - got the download and unzip into a function
 - got create_raw_table working properly now (found an issue with handling the extras when there where none.)
 - added check if python file is being ran directly or is being imported due to local package import problems
+
+### 2026-11-08

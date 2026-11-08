@@ -27,66 +27,66 @@ query_raw = sql_base_query('raw_data', '*')
 
 df = pd.read_sql(query_raw, engine)
 
-print(df.keys())
+# print(df.keys())
 print(df.head())
 
 
-# %% #* cardholders query sql
-df_card = pd.read_sql(query_card, engine)
+# # %% #* cardholders query sql
+# df_card = pd.read_sql(query_card, engine)
 
-print(df_card.head(20))
+# print(df_card.head(20))
 
-print(df_card[df_card['age'] == df_card['age'].max()])
-print(df_card[df_card['credit_limit'] == df_card['credit_limit'].max()])
-
-
-# %% #* monthly reports sql query
-
-where = 'cardholder_id = 19'
-
-# where = (
-#     """
-#     cardholder_id IN(
-#     SELECT cardholder_id
-#     FROM monthly_reports
-#     GROUP BY cardholder_id
-#     HAVING MIN(pay) == -2
-#     )
-#     """
-#     )
+# # print(df_card[df_card['age'] == df_card['age'].max()])
+# # print(df_card[df_card['credit_limit'] == df_card['credit_limit'].max()])
 
 
-query = sql_base_query(
-            'monthly_reports',
-            '*',
-            where=where
-            )
+# # %% #* monthly reports sql query
 
-# query = sql_base_query('monthly_reports', 'DISTINCT(pay)')
+# where = 'cardholder_id = 19'
 
-# query = sql_base_query('monthly_reports', 'cardholder_id', where = where)
-
-
-# print(query)
-
-df_month = pd.read_sql(query, engine)
-
-
-print(df_month)
+# # where = (
+# #     """
+# #     cardholder_id IN(
+# #     SELECT cardholder_id
+# #     FROM monthly_reports
+# #     GROUP BY cardholder_id
+# #     HAVING MIN(pay) == -2
+# #     )
+# #     """
+# #     )
 
 
+# query = sql_base_query(
+#             'monthly_reports',
+#             '*',
+#             # where=where
+#             )
+
+# # query = sql_base_query('monthly_reports', 'DISTINCT(pay)')
+
+# # query = sql_base_query('monthly_reports', 'cardholder_id', where = where)
 
 
-# %% #* query using sqlite3
+# # print(query)
 
-# query = "DROP TABLE monthly_reports"
-# query = "DROP TABLE cardholder"
-query = "DROP TABLE raw_data"
+# df_month = pd.read_sql(query, engine)
 
 
-with sql.connect(db_location) as db:
-    q_back = db.execute(query)
-print('ran')
+# print(df_month)
+
+
+
+
+# # %% #* query using sqlite3
+
+# # query = "DROP TABLE monthly_reports"
+# # query = "DROP TABLE cardholder"
+# query = "DROP TABLE raw_data"
+
+
+# with sql.connect(db_location) as db:
+#     q_back = db.execute(query)
+# print('ran')
 
 
 
