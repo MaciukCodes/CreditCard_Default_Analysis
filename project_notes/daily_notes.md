@@ -41,3 +41,6 @@
 - got the insert_raw_table function finished and deleted create_db python file
 - insert_cardholder function running as well held off on extensive testing (restarting the table) since it would be required later with final function
 - full execute on main.py works had to adjust import check and locations so it is possible to run from cli and inside vs_code
+- docker image and container both ran but unsure of a way to inspect properly aside from running the script manually within the container
+  - copilot gave a suggestion for debugging but it did not seem to work properly and parts seemed unusual
+- just to clarify Dockerfile is expected to be fine and project is successful
