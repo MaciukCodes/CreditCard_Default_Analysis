@@ -33,3 +33,11 @@
 - added check if python file is being ran directly or is being imported due to local package import problems
 
 ### 2026-11-08
+- had trouble debugging values and in the process lead to multiple freezing / crashing of code due to low cpu capabilities
+
+### 2026-11-09
+- found the issue of the values issue and it not taking the values keyword argument? removed part so only the value remains and appear to be fixed.
+  - successfully aggravated the issue by adding the table name keyword argument
+- got the insert_raw_table function finished and deleted create_db python file
+- insert_cardholder function running as well held off on extensive testing (restarting the table) since it would be required later with final function
+- full execute on main.py works had to adjust import check and locations so it is possible to run from cli and inside vs_code

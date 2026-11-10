@@ -4,4 +4,8 @@
  - ~in the monthly table add a column for last payment or something using a window statement~
    - 2026-11-06 quashed for now  -PM  # due to cardholder 19 and 10 having instances in there pay field that appear wrong
  - Create a materialized view within the container as well as an open session ability ( to be able to query the view ideally)
+ - change case_creation to only need a single dictionary
+   -  if it can take a double dictionary have steps in place to split the possible other outcomes 
+   - should be accomplishable with elif statements
+   - *** this is in regards to the function control is in the SQL here and unless there is a need to apply that to the python (ie the elif statement to save writting a new case statement ( this is sqlite so probably the better way to do that anyways) )
  - 

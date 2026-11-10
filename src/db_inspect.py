@@ -27,20 +27,20 @@ query_raw = sql_base_query('raw_data', '*')
 
 df = pd.read_sql(query_raw, engine)
 
-# print(df.keys())
+# # print(df.keys())
 print(df.head())
 
 
-# # %% #* cardholders query sql
-# df_card = pd.read_sql(query_card, engine)
+# %% #* cardholders query sql
+df_card = pd.read_sql(query_card, engine)
 
-# print(df_card.head(20))
+print(df_card.head())
 
 # # print(df_card[df_card['age'] == df_card['age'].max()])
 # # print(df_card[df_card['credit_limit'] == df_card['credit_limit'].max()])
 
 
-# # %% #* monthly reports sql query
+# %% #* monthly reports sql query
 
 # where = 'cardholder_id = 19'
 
@@ -56,11 +56,12 @@ print(df.head())
 # #     )
 
 
-# query = sql_base_query(
-#             'monthly_reports',
-#             '*',
+query = sql_base_query(
+            'monthly_reports',
+            '*',
 #             # where=where
-#             )
+            )
+
 
 # # query = sql_base_query('monthly_reports', 'DISTINCT(pay)')
 
@@ -69,15 +70,13 @@ print(df.head())
 
 # # print(query)
 
-# df_month = pd.read_sql(query, engine)
+df_month = pd.read_sql(query, engine)
 
 
-# print(df_month)
+print(df_month.head())
 
 
-
-
-# # %% #* query using sqlite3
+# %% #* query using sqlite3
 
 # # query = "DROP TABLE monthly_reports"
 # # query = "DROP TABLE cardholder"

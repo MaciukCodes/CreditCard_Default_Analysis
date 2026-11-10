@@ -101,7 +101,7 @@ def case_creation(else_str : str | None = None, **kwargs):
 
     x_checks = ' '.join(checks)
 
-    if else_str is None:
+    if len(else_str) == 0 :
         e_other = ""
     else:
         e_other = f"ELSE '{else_str}'"
@@ -134,7 +134,7 @@ def sql_insert(
 
     cocols = ', '.join(columns)
 
-    print(cocols)
+    
     if len(columns) == 0:
         cols = ''
     else:
